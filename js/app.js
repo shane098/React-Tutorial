@@ -31,7 +31,10 @@ const App = {
         App.$.squares.forEach(square => {
             square.addEventListener("click", event => {
                 console.log(`You clicked square ${event.target.id}`);
-
+                console.log(`Current player is ${event.target.currentPlayer}`)
+                if(square.hasChildNodes()){
+                    return;
+                }
                 const currentPlayer = App.state.currentPlayer
                 const icon = document.createElement("i");
                 if(currentPlayer === 1) {
